@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicontainer-nginx
+  labels:
+    app: web
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: http-volume
+          mountPath: /var/log/nginx/
+    - name: sidecar-container
+      image: curlimages/curl:latest
+      volumeMounts:
+        - name: http-volume
+          mountPath: /var/log/nginx/
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          while true; do curl 192.168.58.2 >> /var/log/nginx/http_responses.log; sleep 180; done
+  volumes:
+    - name: http-volume
+      emptyDir: {}
+
