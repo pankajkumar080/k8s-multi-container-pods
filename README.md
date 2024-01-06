@@ -6,7 +6,7 @@
 - 
 - Create another container named "sidecar-container" with the image "curlimages/curl:latest" and add the following shell script that stores "nginx-container logs for every 3 mins in the path /var/log/nginx/http_responses.log.
 
-  "while true; do curls <your-nginx-service-ip> >> /<path-to-store>; <time-interval>; done"
+  "while true; do curls "your-nginx-service-ip" >> /"path-to-store"; "time-interval"; done"
 
 NOTE: 
 
