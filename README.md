@@ -3,10 +3,9 @@
 1. Create a Kubernetes manifest file named "pod.yaml" in the path "-/Desktop/Project/k8s-multi-container-pods/" to create a Pod object named "multicontainer-nginx" with label "app: web" and configure it as follows: 
 
 - Create a container named "nginx-container" with the image "nginx:latest" and expose it to the port 80.
-- 
 - Create another container named "sidecar-container" with the image "curlimages/curl:latest" and add the following shell script that stores "nginx-container logs for every 3 mins in the path /var/log/nginx/http_responses.log.
 
-  "while true; do curls "your-nginx-service-ip" >> /"path-to-store"; "time-interval"; done"
+  **"while true; do curls "your-nginx-service-ip" >> /"path-to-store"; "time-interval"; done"**
 
 NOTE: 
 
