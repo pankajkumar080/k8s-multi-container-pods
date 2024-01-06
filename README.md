@@ -16,4 +16,4 @@ NOTE:
 
 Create an "emptyDir" volume named "http-volume and mount it with both the containers using the path /var/log/nginx/.
 
-2. Create a Kubernetes manifest file named "service.yaml" in the path *-/Desktop/Project/kickoffs-k8s-multi-container-pods/" to create a Service object named "nginx-service" of type "LoadBalancer" which uses the port "80".
+2. Create a Kubernetes manifest file named "service.yaml" in the path *-/Desktop/Project/k8s-multi-container-pods//" to create a Service object named "nginx-service" of type "LoadBalancer" which uses the port "80".
